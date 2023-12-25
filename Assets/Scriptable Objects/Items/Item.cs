@@ -53,6 +53,7 @@ public class Weapon : Item
         isEquipable     = true;
         isConsumable    = false;
         maxStack        = 1;
+        itemType        = ItemType.Weapon;
     }
 }
 
@@ -72,6 +73,7 @@ public class Consumable : Item
         isEquipable      = false;
         isConsumable     = true;
         maxStack         = 99;
+        itemType         = ItemType.Consumable;
     }
 }
 
@@ -79,10 +81,24 @@ public class Consumable : Item
 public class Legacy : Item
 {
     public Skill skill;
+
+    public Legacy( )
+    {
+        isEquipable      = true;
+        isConsumable     = true;
+        maxStack         = 1;
+        itemType         = ItemType.Legacy;
+    }
 }
 
 [CreateAssetMenu( fileName = "Material", menuName = "Items/Material" )]
 public class Material : Item
 {
-    
+    public Material( )
+    {
+        isEquipable      = false;
+        isConsumable     = false;
+        maxStack         = 999;
+        itemType         = ItemType.Material;
+    }
 }

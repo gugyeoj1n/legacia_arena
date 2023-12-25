@@ -14,3 +14,21 @@ public class Skill : ScriptableObject
     public Effect effect;
     public Sprite icon;
 }
+
+[CreateAssetMenu( fileName = "Sequence", menuName = "Skills/Sequence" )]
+public class Sequence : Skill
+{
+    public Sequence( )
+    {
+        effect = Effect.Sequence;
+    }
+}
+
+[CreateAssetMenu( fileName = "Trigger", menuName = "Skills/Trigger" )]
+public class Trigger : Skill
+{
+    public Trigger( )
+    {
+        effect = Effect.Trigger;
+    }
+}
